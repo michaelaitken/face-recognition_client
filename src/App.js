@@ -8,6 +8,7 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
+// The imports for all of the components used in this app.
 
 const initialState = {
   input: '',
@@ -23,12 +24,14 @@ const initialState = {
     joined: ''
   }
 }
+// Defines the initial state of the app when it first loads.
 
 class App extends Component {
   constructor() {
     super();
     this.state = initialState;
   }
+  // Defines the App component, which extends React.Component. The constructor initializes the state to the initial state defined above.
 
   loadUser = (data) => {
     this.setState({user: {
@@ -39,6 +42,7 @@ class App extends Component {
       joined: data.joined
     }})
   }
+  // A helper function that sets the `user` object in the state.
 
   calculateFaceLocation = (data) => {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -52,14 +56,17 @@ class App extends Component {
       bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
+  // A helper function that calculates the coordinates for the face box that will be displayed on the image.
 
   displayFaceBox = (box) => {
     this.setState({box: box});
   }
+  // A helper function that sets the `box` object in the state.
 
   onInputChange = (event) => {
     this.setState({input: event.target.value});
   }
+  // An event handler that sets the `input` field in the state to the value of the text input.
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
