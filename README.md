@@ -1,6 +1,8 @@
 # Face Recognition App Client
 This project was created as a part of the Zero To Mastery Web Developer course. The project is a face recognition app that allows users to register and sign in to submit entries for face recognition. The app keeps track of the number of entries submitted by the user. The client side of the app is built using React.js and styled using tachyons.
 
+*Note: I'm in the process of commenting my code to make it more readable*
+
 ## Getting Started
 These instructions will help you set up the project on your local machine.
 
